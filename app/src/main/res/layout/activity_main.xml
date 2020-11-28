@@ -13,19 +13,22 @@
         android:id="@+id/num1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/entry"/>
+        android:hint="@string/entry"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/num2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/entry"/>
+        android:hint="@string/entry"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/num3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/entry"/>
+        android:hint="@string/entry"
+        android:inputType="number"/>
 
     <TextView
         android:id="@+id/sumOf3"
