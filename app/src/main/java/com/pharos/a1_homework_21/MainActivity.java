@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText numB2;
     private EditText numB3;
     private TextView sum;
-    int counter;
+    int n1, n2, n3, s;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void result(View view) {
-        int n1, n2, n3, s;
         String N1 = numB1.getText().toString();
         String N2 = numB2.getText().toString();
         String N3 = numB3.getText().toString();
@@ -40,19 +40,19 @@ public class MainActivity extends AppCompatActivity {
         s = n1 + n2 + n3;
         String N = Integer.toString(s);
         sum.setText(N);
-        counter = Integer.parseInt(N);
+
     }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(KEY, String.valueOf(counter));
+        outState.putInt(KEY, s);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        counter = Integer.parseInt(savedInstanceState.getString(KEY,""));
-        sum.setText(String.valueOf(counter));
+        s = savedInstanceState.getInt(KEY);
+        sum.setText(String.valueOf(s));
     }
 }
