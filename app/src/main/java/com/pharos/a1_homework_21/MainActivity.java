@@ -21,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        numB1 = (EditText) findViewById(R.id.num1);
-        numB2 = (EditText) findViewById(R.id.num2);
-        numB3 = (EditText) findViewById(R.id.num3);
-        sum = (TextView) findViewById(R.id.sumOf3);
+        numB1 = findViewById(R.id.num1);
+        numB2 = findViewById(R.id.num2);
+        numB3 = findViewById(R.id.num3);
+        sum = findViewById(R.id.sumOf3);
+
     }
 
 
@@ -45,12 +46,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(KEY, counter);
+        outState.putString(KEY, String.valueOf(counter));
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        counter = savedInstanceState.getInt(KEY);
+        counter = Integer.parseInt(savedInstanceState.getString(KEY,""));
+        sum.setText(String.valueOf(counter));
     }
 }

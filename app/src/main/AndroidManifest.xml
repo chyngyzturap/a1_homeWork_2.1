@@ -11,10 +11,9 @@
         android:theme="@style/Theme.A1_homeWork_21">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.MAIN"
+                    />
                 <category android:name="android.intent.category.LAUNCHER" />
-                //android:screenOrientation="portrait" />
             </intent-filter>
 
         </activity>
